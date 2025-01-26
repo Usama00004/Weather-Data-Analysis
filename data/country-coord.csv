@@ -1,4 +1,4 @@
-Country,Alpha-2 code,Alpha-3 code,Numeric code,Latitude (average),Longitude (average)
+Country,Alpha-2_code,Alpha_3 code,Numeric_code,Latitude,Longitude
 Afghanistan,AF,AFG,4,33.0,65.0
 Albania,AL,ALB,8,41.0,20.0
 Algeria,DZ,DZA,12,28.0,3.0
