@@ -1,0 +1,46 @@
+import snowflake.connector
+import pandas as pd
+
+def insert_data_into_snowflake():
+    # Snowflake connection parameters
+    conn = snowflake.connector.connect(
+        user='UsamaTahir',
+        password='SnowP@ss4test2',
+        account= 'OZRCCVI.eu-central-1.snowflakecomputing.com',
+        warehouse='COMPUTE_WH',
+        database='WEATHER_DATABASE',
+        schema='PUBLIC'
+    )
+
+    try:
+        # Create a cursor object
+        cursor = conn.cursor()
+
+        # Data to insert into the table
+        data = [
+            (33.0, 65.0, '21:15', '2025-01-26', -0.8, 5.6, 50),  # Example row 1
+            # Add more rows here if needed
+        ]
+
+        # SQL query for inserting data
+        insert_query = """
+        INSERT INTO WEATHER_DATABASE.PUBLIC.WEATHER_DATA (
+            LATITUDE, LONGITUDE, TIME, DATE, TEMPERATURE, WINDSPEED, WINDDIRECTION
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+
+        # Execute the insert query for each row
+        cursor.executemany(insert_query, data)
+
+        print("Data inserted successfully into Snowflake.")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    finally:
+        # Close the cursor and connection
+        cursor.close()
+        conn.close()
+
+# Call the function to insert data
+insert_data_into_snowflake()
