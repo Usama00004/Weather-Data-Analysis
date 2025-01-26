@@ -5,12 +5,12 @@ def main():
     country = "DE"
 
     print("Fetching weather data...")
-    weather_data = fetch_weather_data(city, country)
-
-    if weather_data:
-        print("Weather Data:", weather_data)
-    else:
-        print("Failed to fetch weather data.")
+    # weather_data = fetch_weather_data(city, country)
+    fetch_weather_data()
+    # if weather_data:
+    #     print("Weather Data:", weather_data)
+    # else:
+    #     print("Failed to fetch weather data.")
 
 if __name__ == "__main__":
     main()
