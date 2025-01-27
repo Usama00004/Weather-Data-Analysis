@@ -12,7 +12,7 @@ This project demonstrates an ETL (Extract, Transform, Load) pipeline that fetche
 
 ## Overview
 This project fetches weather data from a public weather API and performs data transformation using Pandas. The transformed data is then loaded into a Snowflake table for further analysis.
-
+![Table](https://github.com/Usama00004/Weather-Data-Analysis/blob/main/images/Image_4.png)
 ![Insertion Stats](https://github.com/Usama00004/Weather-Data-Analysis/blob/main/images/Image_2.png)  
 
 ## Technologies Used
