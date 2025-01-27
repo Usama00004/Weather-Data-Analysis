@@ -14,6 +14,7 @@ def fetch_weather_data():
 
     # Base URL for Open-Meteo API
     weather_data_list = []
+    i = 0
     
     # Loop through the latitudes and longitudes and call the API for each pair
     for latitude, longitude in zip(latitudes, longitudes):
@@ -25,7 +26,8 @@ def fetch_weather_data():
             data = response.json()
             current_weather = data.get('current_weather', {})
             if current_weather:
-                weather_data = {  
+                weather_data = {
+                    'country': country[i],  
                     'latitude': latitude,
                     'longitude': longitude,
                     'time': current_weather.get('time'),
@@ -35,6 +37,7 @@ def fetch_weather_data():
                     'winddirection': current_weather.get('winddirection')
                 }
                 weather_data_list.append(weather_data)
+                i = i+1
             else:
                 print("Failed to fetch weather data.")    
              

@@ -1,8 +1,8 @@
 import os
 import snowflake.connector
 import pandas as pd
-from config import USER,PASSWORD,ACCOUNT,WAREHOUSE,DATABASE,SCHEMA,ROLE
-
+from scripts.config import USER,PASSWORD,ACCOUNT,WAREHOUSE,DATABASE,SCHEMA,ROLE
+     
 
 def insert_data_into_snowflake():
     # Snowflake connection parameters
@@ -28,11 +28,12 @@ def insert_data_into_snowflake():
         for _, row in df_to_export.iterrows():
             # Parameterized query for safe insertion
             query = """
-                INSERT INTO WEATHER_DATA (latitude, longitude, time, date, temperature, windspeed, winddirection)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO WEATHER_DATA (country, latitude, longitude, time, date, temperature, windspeed, winddirection)
+                VALUES (%s,%s, %s, %s, %s, %s, %s, %s)
             """
             # Execute the query with parameters
             cursor.execute(query, (
+                row['country'],
                 row['latitude'],
                 row['longitude'],
                 row['time'],
