@@ -1,18 +1,19 @@
 import os
 import snowflake.connector
 import pandas as pd
+from config import USER,PASSWORD,ACCOUNT,WAREHOUSE,DATABASE,SCHEMA,ROLE
 
 
 def insert_data_into_snowflake():
     # Snowflake connection parameters
     conn = snowflake.connector.connect(
-        user='',
-        password='',
-        account='',
-        warehouse='COMPUTE_WH',
-        database='WEATHER_DATABASE',
-        schema='PUBLIC',
-        role='ACCOUNTADMIN'
+        user = USER,
+        password = PASSWORD,
+        account = ACCOUNT,
+        warehouse = WAREHOUSE,
+        database = DATABASE,
+        schema = SCHEMA,
+        role = ROLE
     )
 
     try:
@@ -52,4 +53,4 @@ def insert_data_into_snowflake():
         conn.close()
 
 
-insert_data_into_snowflake()
+
