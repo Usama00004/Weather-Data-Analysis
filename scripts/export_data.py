@@ -6,9 +6,9 @@ import pandas as pd
 def insert_data_into_snowflake():
     # Snowflake connection parameters
     conn = snowflake.connector.connect(
-        user='USAMATAHIR',
-        password='SnowP@ss4test2',
-        account='ozrccvi-vk20821',
+        user='',
+        password='',
+        account='',
         warehouse='COMPUTE_WH',
         database='WEATHER_DATABASE',
         schema='PUBLIC',
