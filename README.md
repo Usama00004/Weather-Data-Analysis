@@ -1,1 +1,33 @@
-# Weather-Data-Analysis
+# Weather Data Analysis 
+
+This project demonstrates an ETL (Extract, Transform, Load) pipeline that fetches weather data from an API, processes the data using Python Pandas, and loads the transformed data into a Snowflake table.
+
+![Project Image](path/to/your/image.png)  <!-- Replace with your image path -->
+
+## Table of Contents
+- [Overview](#overview)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [ETL Process](#etl-process)
+- [License](#license)
+
+## Overview
+This project fetches weather data from a public weather API and performs data transformation using Pandas. The transformed data is then loaded into a Snowflake table for further analysis.
+
+![ETL Process Diagram](path/to/your/image.png)  <!-- Replace with your image path -->
+
+## Technologies Used
+- Python 3.x
+- Pandas
+- Requests (for API calls)
+- Snowflake Python Connector
+- Weather API (e.g., OpenWeatherMap)
+- Snowflake Database
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/weather-etl-project.git
+   cd weather-etl-project
